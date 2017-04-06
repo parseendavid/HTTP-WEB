@@ -10,11 +10,13 @@ response = urlopen(request)
 json_dict1 = load(response)
 
 # Prints out country profile to console
-
-print 'Country Name: ' + str(json_dict1[1][0]['name'])
-print 'Country\'s Capital: ' + str(json_dict1[1][0]['capitalCity'])
-print 'Country\'s Region: ' + str(json_dict1[1][0]['region']['value'])
-print 'Country\'s Income Level' +str(json_dict1[1][0]['incomeLevel']['value'])
-print 'Longitude: ' + str(json_dict1[1][0]['longitude'])
-print 'Latitude: ' + str(json_dict1[1][0]['latitude'])
-print 'Iso2code: ' + str(json_dict1[1][0]['iso2Code'])
+try:
+    print 'Country Name: ' + str(json_dict1[1][0]['name'])
+    print 'Country\'s Capital: ' + str(json_dict1[1][0]['capitalCity'])
+    print 'Country\'s Region: ' + str(json_dict1[1][0]['region']['value'])
+    print 'Country\'s Income Level' +str(json_dict1[1][0]['incomeLevel']['value'])
+    print 'Longitude: ' + str(json_dict1[1][0]['longitude'])
+    print 'Latitude: ' + str(json_dict1[1][0]['latitude'])
+    print 'Iso2code: ' + str(json_dict1[1][0]['iso2Code'])
+except:
+    print '*'*10 + "Please input a valid iso2Code for country" + '*'*10
